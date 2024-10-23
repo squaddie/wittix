@@ -47,8 +47,6 @@ class WriteUserService
             $data['user_name'] = $this->generateUserName($userDTO, $suffix);
             $data['password'] = $this->generateHashedPassword();
 
-            file_put_contents(public_path('user.txt'), $data['user_name']);
-
             $this->userModel->insert($data);
 
             return true;
@@ -75,8 +73,6 @@ class WriteUserService
     private function generateHashedPassword(): string
     {
         $pass = Str::password();
-
-        file_put_contents(public_path('pass.txt'), $pass);
 
         return Hash::make($pass);
     }

@@ -57,6 +57,6 @@ class User extends Authenticatable
     {
         $segments = explode('_', $this->user_name);
 
-        return end($segments) + self::USER_UNIQUE_SUFFIX_ITERATOR;
+        return (int)end($segments) + self::USER_UNIQUE_SUFFIX_ITERATOR;
     }
 }

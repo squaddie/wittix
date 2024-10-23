@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         Artisan::call('app:create-user', $request->validated());
 
-        return response()->setStatusCode(ResponseCodes::HTTP_CREATED);
+        return response('', ResponseCodes::HTTP_CREATED);
     }
 
     /**

@@ -38,15 +38,4 @@ class LoginController extends Controller
             'token_type' => 'Bearer',
         ]);
     }
-
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function logout(Request $request): JsonResponse
-    {
-        $request->user()->currentAccessToken()->delete();
-
-        return response()->json(['message' => 'Logged out successfully'], 200);
-    }
 }

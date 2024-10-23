@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\SinglePageAppController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('{any}', [SinglePageAppController::class, 'index'])->where('any', '.*');
-Route::auth();
+Route::get('login', [LoginController::class, 'login']);
+Route::get('logout', [LoginController::class, 'logout']);
+

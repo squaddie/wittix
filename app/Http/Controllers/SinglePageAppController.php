@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 
 /**
  * Class SinglePageAppController
@@ -11,9 +13,9 @@ use Illuminate\Contracts\View\Factory;
 class SinglePageAppController extends Controller
 {
     /**
-     * @return Factory
+     * @return Factory|Application|View|\Illuminate\Contracts\Foundation\Application
      */
-    public function index(): Factory
+    public function index(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
         return view('layouts.app');
     }
